@@ -1,0 +1,5 @@
+time_series_aq/
+test_delhi_aqi.csv
+train_delhi_aqi.csv
+val_delhi_aqi.csv
+.DS_Store
