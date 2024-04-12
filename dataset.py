@@ -35,7 +35,7 @@ class TimeSeriesDataset(Dataset):
 
     def __len__(self):
         """Returns the total number of sequences that can be generated from the dataframe."""
-        return len(self.dataframe) - self.seq_length + 1
+        return len(self.dataframe) - self.seq_length 
 
     def __getitem__(self, idx):
         """
@@ -47,15 +47,15 @@ class TimeSeriesDataset(Dataset):
         Returns:
             (input,output): A tuple containing the input sequence (as a flattened numpy array) and the target AQI value.
         """
-        sequence = self.dataframe.iloc[idx:idx + self.seq_length]
-        x = sequence.iloc[:, :-1].to_numpy().reshape(-1)
+        sequence = self.dataframe.iloc[idx:idx + self.seq_length + 1]
+        x = sequence.iloc[:-1, :].to_numpy().reshape(-1)
         y = sequence.iloc[-1, -1]
 
         if self.transform:
             x = self.transform(x)
             y = self.transform(y)
         return x, y
-
+    
 class NumpyToTensor:
     """
     A transform class that converts a numpy array to a PyTorch tensor.
