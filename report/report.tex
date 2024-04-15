@@ -1,0 +1,67 @@
+\documentclass[12pt,a4paper]{article}
+
+% Encoding and language settings
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+% Math packages
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+% For images
+\usepackage{graphicx}
+
+% Improving interface for defining floating objects such as figures and tables
+\usepackage{float}
+
+% Enhanced support for captions
+\usepackage{caption}
+\usepackage{subcaption}
+
+% Margins and spacing
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{setspace}
+\doublespacing % or \onehalfspacing
+
+% Hyperlinks in the document
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% Title, authors, and date configuration
+\title{\textbf{Performance of Hypothesis Classes on Time Series Data}}
+\author{
+  Sasmit Datta\and
+  Debangshu Chowdhary\and
+  Netra Poonia
+}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem Statement}
+This report aims to evaluate the predictive capabilities of three distinct models: a linear model, a decision tree, and a neural network, to determine which of them provides the most accurate and reliable forecasts for a given time series dataset. Each model comes with its own strengths and weaknesses concerning time series data - linear models are simple and interpretable but may fail to capture complex patterns; decision trees offer a more nuanced approach to non-linearity but may overfit; and neural networks offers a parametrized way to fit non-linear data but can suffer from high computational demands.
+\subsection{Formulation}
+For given time series data $\mathbf{x}_{T-k},\mathbf{x}_{T-k+1},\hdots,\mathbf{x}_{T}$ where $\mathbf{x}_t\in \mathbb{R}^n$ we fit a model 
+\begin{equation}
+f(\mathbf{x}_{T-k},\mathbf{x}_{T-k+1},...,\mathbf{x}_{T-1}) = \mathbf{x}_{T}^{(n)}
+\end{equation}
+where $\mathbf{x}_{t}^{(i)}\in \mathbb{R}$ is the $i$-th value of the vector $\mathbf{x}_{t}$. In essence what we are trying to do is given the multivariate time-series data points of the $k$ previous time steps, we try to predict the scaler value of the $n$-th index of data point of the next time-step.
+
+\section{Methodology}
+
+\subsection{Dataset}
+
+
+% Rest of your document
+\end{document}
+
+
