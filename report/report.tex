@@ -94,7 +94,7 @@ f(\mathbf{x}) = \sum_{m=1}^{M} c_m \cdot I(\mathbf{x} \in R_m)
 where \( c_m \) is the predicted value for the region \( R_m \), and \( I \) is the indicator function, which equals 1 if \( \mathbf{x} \) falls into the region \( R_m \) and 0 otherwise.
 
 \section{Experimental Results}
-We separated our data into a 90:5:5 train:validation:test split. For the linear and neural network, we normalised all the inflowing data with the mean and standard deviation of our train dataset. MSE Loss and coefficient of determination ($R^2$) were used as metrics. We trained each model, performing hyper-parameter optimization to maximise performance on the validation dataset.
+We separated our data into a 90:5:5 train:validation:test split. For the linear model and neural network, we normalised all the inflowing data with the mean and standard deviation of our train dataset. MSE Loss and coefficient of determination ($R^2$) were used as metrics. We trained each model, performing hyper-parameter optimization to maximise performance on the validation dataset.
 
 \begin{table}[ht]
 \centering
@@ -113,7 +113,7 @@ Linear Model      & 0.793     & 790.919  \\ \bottomrule
 The Regression Tree model demonstrates a near-perfect fit with an \( R^2 \) score of 0.999 and an MSE of 3.417 on the test data. This means that it captures the inherent pattern and variance of the underlying data quite well.
 
 \textbf{Neural Network Model:}
-With an \( R^2 \) score of 0.815 and an MSE of 708.812, the Neural Network model indicates a good, but not exceptional, level of accuracy. The neural network lacks a inductive bias towards sequence since the vectors are concatenated and aren't fed with any time of sequential information to aid the model to make better inferences.
+With an \( R^2 \) score of 0.815 and an MSE of 708.812, the Neural Network model indicates a good, but not exceptional, level of accuracy. The neural network lacks am inductive bias towards sequence since the vectors are concatenated and aren't fed with any sort of sequential information.
 
 \textbf{Linear Model:}
 The Linear Model lags slightly behind with an \( R^2 \) score of 0.793 and an MSE of 790.919. The linear model has been able to capture the variance in the data as well as the neural network but in terms of MSE, it is quite behind. Although, a higher MSE like this is natural due to the almost negligible parameter count as compared to the neural network (121 vs 97,024). This also alludes to the fact that the neural network may be over-parametrised for the task at hand and might be overfitting to the data.
